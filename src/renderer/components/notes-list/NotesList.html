@@ -1,0 +1,55 @@
+<div id="notes-list">
+    <div id="search-buttons" class="columns">
+      <div id="search">
+        <b-field>
+          <b-input placeholder="Search by name, description or language..."
+                   v-model="searchField"
+                   type="search"
+                   icon="search">
+          </b-input>
+        </b-field>
+      </div>
+      <div id="buttons">
+        <button id="preferences" class="button is-light" @click="settingsModalActive = true">
+          <b-icon icon="gear"></b-icon>
+        </button>
+        <button id="add-note" class="button is-dark" @click="createNoteModalActive = true">
+          <b-icon icon="plus"></b-icon>
+        </button>
+      </div>
+    </div>
+  
+    <div class="loading-bro" v-if="isLoading">
+      <h1>Loading</h1>
+      <svg id="load" x="0px" y="0px" viewBox="0 0 150 150">
+        <circle id="loading-inner" cx="75" cy="75" r="60"/>
+      </svg>
+    </div>
+  
+    <div v-if="notesFiltered.length > 0 && !isLoading" class="columns notes" v-for="note in notesFiltered">
+      <div class="column is-12 note-card">
+        <cn-note-card :note="note"></cn-note-card>
+      </div>
+    </div>
+    <div v-if="notesFiltered.length === 0 && searchField === '' && !isLoading" class="columns notes">
+    </div>
+    <div v-if="notesFiltered.length === 0 && searchField !== '' && !isLoading" class="columns notes">
+      <div class="column is-12 no-note">
+        <h1>Oh :(</h1>
+        <h2>Sorry, no {{'note'}} found for your search</h2>
+      </div>
+    </div>
+  
+    <b-modal :active.sync="createNoteModalActive" has-modal-card>
+      <cn-create-note-modal></cn-create-note-modal>
+    </b-modal>
+  
+    <b-modal :active.sync="settingsModalActive" has-modal-card>
+      <cn-settings-modal></cn-settings-modal>
+    </b-modal>
+  
+    <b-modal :active.sync="helpTokenModalActive" has-modal-card>
+      <cn-help-token-modal></cn-help-token-modal>
+    </b-modal>
+  </div>
+  
