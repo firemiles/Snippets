@@ -1,9 +1,9 @@
 {
   "name": "snippets",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "firemiles <miles.dev@outlook.com>",
-  "description": "snippets for code",
-  "license": null,
+  "description": "quickly and smart snippets manager",
+  "license": "MIT",
   "main": "./dist/electron/main.js",
   "scripts": {
     "build": "node .electron-vue/build.js && electron-builder",

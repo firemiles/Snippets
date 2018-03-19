@@ -6,7 +6,7 @@
       <a id="about-code-notes" @click="aboutCodeNotesModalActive = true" title="About Code Notes...">
         <b-icon icon="info-circle"></b-icon>
       </a>
-      <a id="github" @click="open('https://github.com/lauthieb/code-notes')" title="Show on Github...">
+      <a id="github" @click="open('https://github.com/firemiles/snippets')" title="Show on Github...">
         <b-icon icon="github"></b-icon>
       </a>
     </div>
@@ -23,7 +23,7 @@
 
             <p>A simple code snippet manager for developers built with Electron & Vue.js 🚀</p>
 
-            <p>Feel free to contribute on <a @click="open('https://github.com/lauthieb/code-notes')">Github</a> 🍻</p>
+            <p>Feel free to contribute on <a @click="open('https://github.com/firemiles/snippets')">Github</a> 🍻</p>
           </div>
         </div>
       </div>

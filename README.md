@@ -1,6 +1,7 @@
 # snippets
 
-> snippets for code
+> A quick and smart snippets editor and manager for everyone 🚀.
+
 
 #### Build Setup
 
@@ -23,8 +24,8 @@ npm run lint
 
 ```
 
-#### Inspire
-[lauthieb/code-notes](https://github.com/lauthieb/code-notes)
+#### Credits
+- [lauthieb/code-notes](https://github.com/lauthieb/code-notes): *snippets* is inspired by *code-notes*.
 
 ---
 
