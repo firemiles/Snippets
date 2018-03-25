@@ -107,7 +107,7 @@ export default {
   beforeRouteEnter(route, redirect, next) {
     next(vm => {
       vm.$store.dispatch('loadNotes');
-      vm.$store.dispatch('loadSettings');
+      // vm.$store.dispatch('loadSettings');
     });
   },
 };

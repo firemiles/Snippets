@@ -1,9 +1,9 @@
 <template>
   <nav>
-    <img class="logo" src="~@/assets/code-notes-logo-white-full.png" alt="Code Notes logo">
+    <img class="logo" src="~@/assets/snippets.png" alt="Snippets logo">
     <div class="is-pulled-right">
 
-      <a id="about-code-notes" @click="aboutCodeNotesModalActive = true" title="About Code Notes...">
+      <a id="about-code-notes" @click="aboutSnippetsModalActive = true" title="About Snippets...">
         <b-icon icon="info-circle"></b-icon>
       </a>
       <a id="github" @click="open('https://github.com/firemiles/snippets')" title="Show on Github...">
@@ -11,7 +11,7 @@
       </a>
     </div>
 
-    <b-modal :active.sync="aboutCodeNotesModalActive" :width="580" scroll="keep">
+    <b-modal :active.sync="aboutSnippetsModalActive" :width="580" scroll="keep">
       <div class="card">
         <div class="card-content">
           <div class="media">
@@ -43,7 +43,7 @@ export default {
   data() {
     return {
       appVersion: remote.app.getVersion(),
-      aboutCodeNotesModalActive: false,
+      aboutSnippetsModalActive: false,
       helpTokenModalActive: false,
     };
   },
