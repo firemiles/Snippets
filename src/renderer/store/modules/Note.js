@@ -1,5 +1,4 @@
 import db from '../../datastore-notes';
-
 const state = {
     notes: [],
     languageSelected: 'all',
@@ -45,6 +44,18 @@ const actions = {
                 store.commit('SELECT_LOADING', false);
             }
         });
+    },
+    addNotes(store, notes) {
+        store.commit('SELECT_LOADING', true);
+        for (let i=0; i<notes.length; i+=1) {
+            const note = notes[i]
+            db.insert(note, (err, note) => {
+                if (!err) {
+                    store.commit('ADD_NOTE', note);   
+                }
+            });
+        }
+        store.commit('SELECT_LOADING', false);
     },
     updateNote(store, note) {
         db.update({

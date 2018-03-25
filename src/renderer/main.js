@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import axios from 'axios'
 import Buefy from 'buefy';
+import VueClipboard from 'vue-clipboard2';
 
 import 'font-awesome/css/font-awesome.min.css';
 
@@ -38,6 +39,14 @@ require('brace/theme/monokai');
 
 Vue.use(Buefy, {
   defaultIconPack: 'fa',
+});
+
+Vue.use(VueClipboard);
+
+Vue.filter('capitalize', value => {
+  if (!value) return '';
+  value = value.toString();
+  return value.charAt(0).toUpperCase() + value.slice(1);
 });
 
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))

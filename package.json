@@ -1,5 +1,5 @@
 {
-  "name": "snippets",
+  "name": "Snippets",
   "version": "0.0.1",
   "author": "firemiles <miles.dev@outlook.com>",
   "description": "quickly and smart snippets manager",
@@ -22,7 +22,7 @@
     "postinstall": "npm run lint:fix"
   },
   "build": {
-    "productName": "snippets",
+    "productName": "Snippets",
     "appId": "org.simulatedgreg.electron-vue",
     "directories": {
       "output": "build"
@@ -67,6 +67,7 @@
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.7",
     "vue": "^2.3.3",
+    "vue-clipboard2": "^0.1.0",
     "vue-electron": "^1.0.6",
     "vue-router": "^2.5.3",
     "vuex": "^2.3.1"

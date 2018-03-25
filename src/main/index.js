@@ -22,6 +22,7 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     height: 563,
     useContentSize: true,
+    titleBarStyle: 'hiddenInset',
     width: 1000
   })
 

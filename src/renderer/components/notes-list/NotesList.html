@@ -13,8 +13,14 @@
         <button id="preferences" class="button is-light" @click="settingsModalActive = true">
           <b-icon icon="gear"></b-icon>
         </button>
-        <button id="add-note" class="button is-dark" @click="createNoteModalActive = true">
+        <button id="add-note" class="button is-light" @click="createNoteModalActive = true">
           <b-icon icon="plus"></b-icon>
+        </button>
+        <button id="download" class="button is-light" @click="downloadNotes()">
+          <b-icon icon="download"></b-icon>
+        </button>
+        <button id="import" class="button is-light" @click="uploadNotes()">
+          <b-icon icon="upload"></b-icon>
         </button>
       </div>
     </div>

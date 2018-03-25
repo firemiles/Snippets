@@ -3,6 +3,11 @@
 
 <script>
 import Vuex from 'vuex';
+import os from 'os'
+import fs from 'fs'
+import {remote} from 'electron'
+import db, {loadNoteDB} from '../../datastore-notes'
+
 import NoteCard from './note-card/NoteCard';
 import CreateNoteModal from '../modals/create-note-modal/CreateNoteModal'
 
@@ -22,7 +27,38 @@ export default {
     };
   },
   mounted() {},
-  methods: {},
+  methods: {
+    downloadNotes() {
+      const options = {
+        defaultPath: os.homedir(),
+      }
+      remote.dialog.showSaveDialog(options, (filename)=>{
+        if(filename===undefined){
+          return
+        }
+        fs.writeFileSync(filename, fs.readFileSync(db.filename))
+      })
+    },
+    uploadNotes() {
+      const options = {
+        defaultPath: os.homedir(),
+      }
+      remote.dialog.showOpenDialog(options, (filenames)=>{
+        if(filenames===undefined) {
+          return
+        }
+        for(let i=0; i<filenames.length; i+=1){
+          const file = filenames[i]
+          const notesdb = loadNoteDB(file)
+          notesdb.find({}, (err, notes)=>{
+            if (!err) {
+              this.$store.dispatch("addNotes", notes)
+            }
+          })
+        }
+      })
+    },
+  },
   computed: {
     ...Vuex.mapGetters([
       'notes',
@@ -71,7 +107,7 @@ export default {
   beforeRouteEnter(route, redirect, next) {
     next(vm => {
       vm.$store.dispatch('loadNotes');
-      vm.$store.dispatch('loadSettings');
+      // vm.$store.dispatch('loadSettings');
     });
   },
 };
