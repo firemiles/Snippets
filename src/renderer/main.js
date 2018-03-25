@@ -40,6 +40,12 @@ Vue.use(Buefy, {
   defaultIconPack: 'fa',
 });
 
+Vue.filter('capitalize', value => {
+  if (!value) return '';
+  value = value.toString();
+  return value.charAt(0).toUpperCase() + value.slice(1);
+});
+
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 Vue.http = Vue.prototype.$http = axios
 Vue.config.productionTip = false

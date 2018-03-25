@@ -9,4 +9,12 @@ const dbNotes = new Datastore({
   filename: path.join(remote.app.getPath('userData'), '/notes.db'),
 });
 
+function loadNoteDB(filename) {
+  return new Datastore({
+    autoload: true,
+    filename: path.join(filename),
+  })
+}
+
 export default dbNotes;
+export {loadNoteDB};
