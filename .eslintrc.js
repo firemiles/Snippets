@@ -31,6 +31,7 @@ module.exports = {
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
-    "no-console": 0
+    "no-console": 0,
+    "linebreak-style": "off"
   }
 }
