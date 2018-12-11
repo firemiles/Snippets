@@ -67,7 +67,7 @@ nav {
 
   .logo {
     padding: 10px 10px 4px 10px;
-    width: 110px;
+    width: 80px;
     position: relative;
     left: 4%;
   }
