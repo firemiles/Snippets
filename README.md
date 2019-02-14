@@ -2,6 +2,7 @@
 
 > A quick and smart snippets editor and manager for everyone 🚀.
 
+![travis-ci](https://travis-ci.com/firemiles/Snippets.svg?branch=master)
 
 #### Build Setup
 
