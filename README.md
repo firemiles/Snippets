@@ -24,8 +24,7 @@ npm test
 npm run lint
 
 ```
-
-#### Credits
+#### Inspired
 - [lauthieb/code-notes](https://github.com/lauthieb/code-notes): *snippets* is inspired by *code-notes*.
 
 ---
